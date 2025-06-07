@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+
+    .cart-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+    }
+
+    .cart-item-name {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .cart-item-price {
+      font-weight: bold;
+      color: #111;
+    }
+
+    .remove-btn {
+      margin-left: 15px;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    #total {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    #clear-cart {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .empty-msg {
+      text-align: center;
+      color: gray;
+      font-size: 18px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div id="total"></div>
+    <button id="clear-cart">Clear Cart</button>
+  </div>
+
+  <script>
+  let cart = (JSON.parse(localStorage.getItem("cart")) || []).map(item => {
+  let price = parseFloat(item.price);
+  let quantity = parseInt(item.quantity) || 1;
+
+  return {
+    ...item,
+    price: isNaN(price) ? 0 : price,
+    quantity: isNaN(quantity) ? 1 : quantity
+  };
+});
+
+
+  const cartItemsDiv = document.getElementById("cart-items");
+  const totalDiv = document.getElementById("total");
+  const clearCartBtn = document.getElementById("clear-cart");
+
+  function renderCart() {
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = '<p class="empty-msg">Your cart is empty.</p>';
+      totalDiv.textContent = '';
+      clearCartBtn.style.display = 'none';
+      return;
+    }
+
+    clearCartBtn.style.display = 'inline-block';
+
+    let html = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      html += `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">₹${item.price.toFixed(2)} × ${item.quantity} = ₹${itemTotal.toFixed(2)}</div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
+
+    cartItemsDiv.innerHTML = html;
+    totalDiv.textContent = 'Total: ₹' + total.toFixed(2);
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  clearCartBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear the cart?")) {
+      cart = [];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>

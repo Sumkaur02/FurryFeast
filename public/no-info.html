@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Not Found | FurryFeast</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="index.html">FurryFeast</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+
+        <ul class="nav__links" id="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#store">Store</a></li>
+            <li><a href="index.html#service">Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLink"><a href="signin.html">Sign In <i class="ri-login-circle-line"></i></a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container no-info__container">
+        <div class="no-info__content">
+            <h1>No Information Found</h1>
+            <p>We're sorry, but the page or information you're looking for is currently unavailable.</p>
+            <p>Please check back later or navigate to another section of our website.</p>
+            <button onclick="window.location.href='index.html'" class="no-info__btn">
+                Return to Home <i class="ri-home-line"></i>
+            </button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

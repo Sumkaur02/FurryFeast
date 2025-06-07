@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FurryFeast - Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">FurryFeast</a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#store">Store</a></li>
+      <li><a href="index.html#service">Service</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <!-- Cart Icon -->
+<a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+  🛒 <span id="cart-count" style="background: red; color: white; border-radius: 50%; padding: 2px 8px;">0</span>
+</a>
+
+      <li id="authLink"><a href="Signin.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="section__container service__container">
+    <h1 class="section__header">Our Services</h1>
+    <div class="products__grid">
+      <div class="product__card">
+        <img src="assets/training.jpg" alt="Dog Training" />
+        <h3>Dog Training</h3>
+        <p>Professional training sessions for your furry friend.</p>
+        <p class="price">₹1200</p>
+        <button class="add-to-cart" data-id="1" data-name="Dog Training" data-price="1200">Add to Cart</button>
+
+        <!-- <button class="add-to-cart">Add to Cart</button> -->
+      </div>
+      <div class="product__card">
+        <img src="assets/Grooming.jpg" alt="Pet Grooming" />
+        <h3>Pet Grooming</h3>
+        <p>Keep your pet clean and stylish with expert grooming.</p>
+        <p class="price">₹800</p>
+        <!-- <button class="add-to-cart">Add to Cart</button> -->
+        <button class="add-to-cart" data-id="2" data-name="Pet grooming" data-price="800">Add to Cart</button>
+
+      </div>
+      <div class="product__card">
+        <img src="assets/vet.webp" alt="Veterinary Care" />
+        <h3>Veterinary Care</h3>
+        <p>Comprehensive health checkups and medical care.</p>
+        <p class="price">₹1500</p>
+        <button class="add-to-cart" data-id="3" data-name="Veterinary Care" data-price="1500">Add to Cart</button>
+
+        <!-- <button class="add-to-cart">Add to Cart</button> -->
+      </div>
+    </div>
+  </section>
+  
+
+  <script src="script.js"></script>
+  <script>
+  // Load cart from localStorage or initialize empty array
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Update the cart count on page load
+  function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").textContent = count;
+  }
+
+  updateCartCount();
+
+  // Add event listener to all Add to Cart buttons
+  document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      const name = button.getAttribute("data-name");
+      const price = parseFloat(button.getAttribute("data-price"));
+
+      // Check if item already exists in cart
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+
+      // Save updated cart to localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>

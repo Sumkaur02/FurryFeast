@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>FurryFeast</title>
+</head>
+<body>
+  <nav>
+    <div class="nav__header">
+        <div class="nav__logo">
+            <a href="#">FurryFeast</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+        </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#store">Store</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <!-- Cart Icon -->
+<a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+  🛒 <span id="cart-count" style="background: red; color: white; border-radius: 50%; padding: 2px 8px;">0</span>
+</a>
+
+      <li id="authLink"><a href="signin.html">Sign In <i class="ri-login-circle-line"></i></a></li>
+  </ul>
+</nav>
+
+    <header id="home">
+        <div class="section__container header__container">
+            <div class="header__content">
+                <h4>Welcome</h4>
+                <h1>Pet<br /><span>Lovers</span></h1>
+                <h2>We love pets like you do :)</h2>
+                <p>
+                  From routine check-ups to specialized treatments, we're here to
+                  ensure your pets lead happy, healthy lives.
+                </p>
+
+
+                <div class="header__btn">
+                  <button onclick="window.location.href='Signin.html'">
+                      Start Here!
+                      <span><i class="ri-arrow-right-line"></i></span>
+                  </button>
+              </div>
+
+
+        </div>
+        <div class="header__image">
+            <img src="assets/header-bg.png" alt="header-bg" class="header__image-bg"/>
+            <img src="assets/header.png" alt="header"/>
+         </div>
+        </div>
+        <div class="header__bottom">
+
+        </div>
+
+    </header>
+    <section class="section__container intro__container">
+        <p class="section__subheader">Intro</p>
+        <h2 class="section__header">Get to know us more</h2>
+        <div class="intro__grid">
+          
+          <div class="intro__card">
+            <div class="intro__image">
+              <img src="assets/intro-1.png" alt="intro" />
+            </div>
+            <h4>Pet Experts</h4>
+            <p>
+              Meet our team of skilled veterinarians, dedicated to your pet's
+              well-being.
+            </p>
+            <div class="more-text" style="display:none;">
+              <p>Our experts include specialists in internal medicine, dermatology, surgery, and more. Each member is handpicked for their experience and love for animals. They undergo continuous training to ensure your pets receive top-notch care using the latest techniques.</p>
+            </div>
+            <a href="javascript:void(0);" class="read-more-btn">Read More</a>
+          </div>
+          
+          <div class="intro__card">
+            <div class="intro__image">
+              <img src="assets/intro-2.png" alt="intro" />
+            </div>
+            <h4>Vet Services</h4>
+            <p>
+              Offering a wide range of veterinary services to keep your pets
+              healthy and happy.
+            </p>
+            <div class="more-text" style="display:none;">
+            <p>Our vet services include general wellness exams, vaccinations, dental care, emergency treatment, diagnostics, and surgical procedures. We also offer nutritional and behavioral counseling tailored to your pet's unique needs.</p>
+          </div>
+          <a href="javascript:void(0);" class="read-more-btn">Read More</a>
+        </div>
+          
+          <div class="intro__card">
+            <div class="intro__image">
+              <img src="assets/intro-3.png" alt="intro" />
+            </div>
+            
+            <h4>Contact Us</h4>
+            <p>
+              Reach out to us for any inquiries or schedule an appointment for
+              your pet's care.
+            </p>
+            <a href="contact.html">Read More</a>
+          </div>
+        </div>
+      </section>
+      <section class="section__container about__container" id="about">
+        <p class="section__subheader">About Us</p>
+        <h2 class="section__header">What we can do for you</h2>
+        <div class="about__row">
+          <div class="about__image">
+            <img src="assets/about-1.jpg" alt="about" />
+          </div>
+          <div class="about__content">
+            <span><img src="assets/about-1-icon.png" alt="about-icon" /></span>
+            <h4>Let us help you with your pet health</h4>
+            <p>
+              Our expert veterinarians are here to provide comprehensive care and
+              guidance to ensure your pet stays in perfect health.
+            </p>
+          </div>
+        </div>
+        <div class="about__row">
+          <div class="about__image">
+            <img src="assets/about-2.jpg" alt="about" />
+          </div>
+          <div class="about__content">
+            <span><img src="assets/about-2-icon.png" alt="about-icon" /></span>
+            <h4>Caring personal will take care of your pet</h4>
+            <p>
+              Your pet will be in good hands with our compassionate and
+              well-trained staff, who treat every pet like family.
+            </p>
+          </div>
+        </div>
+        <div class="about__row">
+          <div class="about__image">
+            <img src="assets/about-3.jpg" alt="about" />
+          </div>
+          <div class="about__content">
+            <span><img src="assets/about-3-icon.png" alt="about-icon" /></span>
+            <h4>Let us groom your precious and loved pet</h4>
+            <p>
+              From bathing to styling, we offer professional grooming services to
+              keep your pet looking and feeling their best.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="product" id="store">
+        <div class="section__container product__container">
+            <p class="section__subheader">Products</p>
+            <h2 class="section__header">Featured pet products</h2>
+            <div class="product__grid">
+                <div class="product__card">
+                    <img src="assets/product-1.jpg" alt="product">
+                    <h4>Dog Trash Bag</h4>
+                    <p>Convenient and eco-friendly trash bags for easy pet waste disposal.</p>
+                    <h3>₹550</h3>
+                </div>
+                <div class="product__card">
+                    <img src="assets/product-2.jpg" alt="product">
+                    <h4>Pet Accessories</h4>
+                    <p>Explore our range of stylish and functional accessories for your furry friends.</p>
+                    <h3>₹950</h3>
+                </div>
+                <div class="product__card">
+                    <img src="assets/product-3.jpg" alt="product">
+                    <h4>Dog Food</h4>
+                    <p>Nutritious and delicious dog food to keep your pet healthy and happy.</p>
+                    <h3>₹790</h3>
+                </div>
+            </div>
+            <div class="explore__more__container">
+                <button onclick="window.location.href='products.html'" class="explore__btn">
+                    Explore More <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+      <section class="section__container service__container" id="service">
+        <p class="section__subheader">Services</p>
+        <h2 class="section__header">What we can do for you</h2>
+        <div class="service__flex">
+          <div class="service__card">
+            <div>
+              <img src="assets/service-1.png" alt="service" />
+            </div>
+            <p>Emergency Care</p>
+          </div>
+          <div class="service__card">
+            <div>
+              <img src="assets/service-2.png" alt="service" />
+            </div>
+            <p>Vaccination Services</p>
+          </div>
+          <div class="service__card">
+            <div>
+              <img src="assets/service-3.png" alt="service" />
+            </div>
+            <p>Nutrition Counseling</p>
+          </div>
+          <div class="service__card">
+            <div>
+              <img src="assets/service-4.png" alt="service" />
+            </div>
+            <p>Behavioral Consultation</p>
+          </div>
+          <div class="service__card">
+            <div>
+              <img src="assets/service-5.png" alt="service" />
+            </div>
+            <p>Pet Boarding Services</p>
+          </div>
+          
+        </div>
+         <div class="explore-button-container">
+  <a href="services.html" class="explore-button">Explore More ➜</a>
+</div>
+
+
+      </section>
+  
+      <section class="client">
+        <div class="section__container client__container">
+          <p class="section__subheader">Testimonials</p>
+          <h2 class="section__header">What people say about us</h2>
+          <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="client__card">
+            <div class="client__details">
+                <img src="assets/client-1.jpg" alt="client">
+                <div>
+                    <h4>Sarah Johnson</h4>
+                    <h5>Graphic Designer</h5>
+                </div>
+            </div>
+            <p> The care my dog received at FurryFeast was exceptional. The
+                vets were attentive cared about my dog's well-being.
+            </p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="client__card">
+          <div class="client__details">
+            <img src="assets/client-2.jpg" alt="client" />
+            <div>
+              <h4>Michael Adams</h4>
+              <h5>Software Engineer</h5>
+            </div>
+          </div>
+          <p>
+            FurryFeast saved my cat during an emergency! Their quick
+            response and expertise made all the difference.
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="client__card">
+          <div class="client__details">
+            <img src="assets/client-3.jpg" alt="client" />
+            <div>
+              <h4>Emily Martinez</h4>
+              <h5>Teacher</h5>
+            </div>
+          </div>
+          <p>
+            I trust FurryFeast with all my pets. Their team is
+            professional, and they always go the extra mile for their
+            patients.
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="client__card">
+          <div class="client__details">
+            <img src="assets/client-4.jpg" alt="client" />
+            <div>
+              <h4>Jason Lee</h4>
+              <h5>Marketing Specialist</h5>
+            </div>
+          </div>
+          <p>
+            The grooming services at FurryFeast are fantastic! My pup
+            always comes back looking fresh and happy.
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="client__card">
+          <div class="client__details">
+            <img src="assets/client-5.jpg" alt="client" />
+            <div>
+              <h4>David Thompson</h4>
+              <h5>Accountant</h5>
+            </div>
+          </div>
+          <p>
+            I've never seen a team so dedicated to animals. Pet Doctor is
+            my go-to clinic for all pet-related issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+    
+<footer id="contact">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="#">FurryFeast</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#store">Store</a></li>
+      <li><a href="#service">Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Address</h4>
+        <ul class="footer__links">
+          <li><a href="#">New Delhi, India</a></li>
+          <li><a href="#">View on Maps</a></li>
+        </ul>
+        <br />
+        <h4>Inquiries</h4>
+        <ul class="footer__links">
+          <li><a href="#">+91 9997776665</a></li>
+          <li><a href="#">info@furryfeast.com</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Newsletter</h4>
+        <p>Stay updated with out latest news</p>
+         
+        <form id="newsletterForm">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit" class="btn">
+              <i class="ri-arrow-right-line"></i>
+          </button>
+      </form>
+        <br />
+        <h4>Follow Us</h4>
+        <ul class="footer__socials">
+          <li>
+            <a href="no-info.html"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="no-info.html"><i class="ri-twitter-fill"></i></a>
+          </li>
+          <li>
+            <a href="no-info.html"><i class="ri-youtube-fill"></i></a>
+          </li>
+          <li>
+            <a href="no-info.html"><i class="ri-instagram-line"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Sumeet Kaur. All rights reserved.
+    </div>
+  </footer>
+    
+  <!-- Chatbot Widget -->
+<div class="chatbot-widget">
+  <button class="chatbot-toggle">
+    <i class="ri-chat-3-line"></i>
+  </button>
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <h3>FurryFeast Assistant</h3>
+      <button class="chatbot-close"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="chatbot-messages"></div>
+    <div class="chatbot-input">
+      <input type="text" placeholder="Type your question...">
+      <button class="chatbot-send"><i class="ri-send-plane-line"></i></button>
+    </div>
+  </div>
+</div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script>
+      document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const moreText = button.previousElementSibling;
+          const isVisible = moreText.style.display === 'block';
+    
+          // Hide all others
+          document.querySelectorAll('.more-text').forEach(mt => mt.style.display = 'none');
+          document.querySelectorAll('.read-more-btn').forEach(btn => btn.textContent = 'Read More');
+    
+          if (!isVisible) {
+            moreText.style.display = 'block';
+            button.textContent = 'Read Less';
+          }
+        });
+      });
+
+      function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+  }
+
+  updateCartCount();
+    </script>
+    
+</body>
+</html>

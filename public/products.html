@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurryFeast - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="index.html">FurryFeast</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+
+        <ul class="nav__links" id="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#store">Store</a></li>
+            <li><a href="index.html#service">Service</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <!-- Cart Icon -->
+<a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+  🛒 <span id="cart-count" style="background: red; color: white; border-radius: 50%; padding: 2px 8px;">0</span>
+</a>
+
+            <li id="authLink"><a href="signin.html">Sign In <i class="ri-login-circle-line"></i></a></li>
+
+</ul>
+    </nav>
+
+    <section class="section__container products__container">
+        <h2 class="section__header">All Products</h2>
+        <div class="products__grid">
+            <!-- Product cards will be added here by JavaScript -->
+        </div>
+    </section>
+
+<script>
+  // Update cart count from localStorage
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+  }
+
+  updateCartCount();
+</script>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
